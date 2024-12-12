@@ -8,7 +8,6 @@
   width: 100%;
 }
 
-
 .Greeting{
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../public/img/Bienvenida.webp);
   height: 80vh;

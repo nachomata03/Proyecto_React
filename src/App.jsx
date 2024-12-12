@@ -10,7 +10,7 @@ function App(){
   return (
     <>
       <header><NavBar/></header>
-      <section className='bienvenida'><Itemslistconteiner>Ignacio</Itemslistconteiner></section>
+      <section className='bienvenida'><Itemslistconteiner>¡Bienvenido a Santas Golosinas!</Itemslistconteiner></section>
       <section className='sectionMain'>
         <Cardproduct titulo="Fantoche" texto="Alfajor triple de dulce de leche y chocolate / blanco por 24 unidades." img={Fantoche}>Comprar</Cardproduct>
         <Cardproduct titulo="Jorgito" texto="Alfajor Jorgito negro" img={Jorgito}>Comprar</Cardproduct>
