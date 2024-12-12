@@ -9,6 +9,20 @@
 }
 
 
+.Greeting{
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../public/img/Bienvenida.webp);
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.sectionMain{
+  display: flex;
+  justify-content: space-around;
+}
+
 .card{
   display: flex;
   flex-direction: column;
@@ -18,18 +32,4 @@
   margin: 5px;
 
   background: linear-gradient(180deg, rgba(223,210,255,1) 0%, rgb(196, 127, 245) 100%)
-}
-
-.sectionMain{
-  display: flex;
-  justify-content: space-around;
-}
-
-.Greeting{
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../public/img/Bienvenida.webp);
-  height: 80vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
 }
