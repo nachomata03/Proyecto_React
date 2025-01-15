@@ -1,21 +1,33 @@
 import './App.css'
-import Cardproduct from './components/Cardproduct'
 import NavBar from './components/NavBar'
-import Itemslistconteiner from './components/Itemslistconteiner'
-import Fantoche from "../public/img/fantoche_tripe_negro.png"
-import Jorgito from "../public/img/jorgito.png"
-import Picodulce from "../public/img/picoDulce.png"
+import ItemsListConteiner from './components/ItemsListConteiner'
+import ItemDetailConteiner from './components/ItemDetailConteiner'
+
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+
 
 function App(){
-  return (
+    return (
     <>
-      <header><NavBar/></header>
-      <section className='bienvenida'><Itemslistconteiner>¡Bienvenido a Santas Golosinas!</Itemslistconteiner></section>
-      <section className='sectionMain'>
-        <Cardproduct titulo="Fantoche" texto="Alfajor triple de dulce de leche y chocolate / blanco por 24 unidades." img={Fantoche}>Comprar</Cardproduct>
-        <Cardproduct titulo="Jorgito" texto="Alfajor Jorgito negro" img={Jorgito}>Comprar</Cardproduct>
-        <Cardproduct titulo="Pico Dulce" texto="Chupetines pico dulce pack 48 unidades SIN T.A.C.C." img={Picodulce}>Comprar</Cardproduct>
-      </section>
+      {/* <section className='bienvenida'><ItemsListConteiner>¡Bienvenido a Santas Golosinas!</ItemsListConteiner></section>
+      <section><ItemDetailConteiner/></section> */}
+      <BrowserRouter>
+        <header><NavBar/></header>
+        <Routes>
+            <Route path='/' element={<section className='bienvenida'>
+                                        <ItemsListConteiner>¡Bienvenido a Santas Golosinas!</ItemsListConteiner>
+                                        </section>}>
+            </Route>
+            <Route path='/item/:id' element={<section>
+                                              <ItemDetailConteiner/>
+                                            </section>}>
+            </Route>
+            <Route path='/category/:categoryIDs' element={<section className='bienvenida'>
+                                        <ItemsListConteiner>¡Bienvenido a Santas Golosinas!</ItemsListConteiner>
+                                        </section>}>
+            </Route>
+          </Routes>
+      </BrowserRouter>
     </>
   )
 }

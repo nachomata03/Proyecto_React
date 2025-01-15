@@ -1,8 +1,6 @@
-function Button(props) {
-    const {children} = props
+export default function Button(props) {
+  const {onClick, children, color} = props
   return (
-    <button style={{backgroundColor: "#9400ff"}}>{children}</button>
+    <button onClick={onClick} style={{backgroundColor: color}}>{children}</button>
   )
 }
-
-export default Button
