@@ -3,10 +3,11 @@ import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import {getDataByCategory} from '../data/getdata'
 import getData from '../data/getdata' 
+import Loader from './Loader'
 
 export default function ItemsListConteiner(props) {
 
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState(null)
   const {categoryIDs} = useParams();
 
   useEffect(() => {
@@ -26,6 +27,9 @@ export default function ItemsListConteiner(props) {
         getProductsByCategory();
       }
     }, [categoryIDs])
+
+    if(!products)
+      return <Loader/>
 
   return (
     <>

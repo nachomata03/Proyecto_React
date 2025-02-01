@@ -1,7 +1,7 @@
 import Item from './Item'
 export default function ItemList(props) {
   return (<>
-      {props.productos.map(({id, title, description, price, stock, img, category}) => (
+      {props.productos.map(({id, title, description, price, stock, img, category, discount}) => (
         <Item 
           key = {id} 
           id = {id}
@@ -11,6 +11,7 @@ export default function ItemList(props) {
           stock ={stock} 
           img = {img} 
           categoria = {category}
+          descuento = {discount}
           />
       ))}     
   </>)

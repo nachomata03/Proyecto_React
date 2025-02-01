@@ -16,6 +16,7 @@ const PRODUCTS = [
         stock: 40,
         img: "https://picsum.photos/id/237/200/300",
         category: "alfajores",
+        discount: "20",
     },
     {
         id: 3,
@@ -34,6 +35,7 @@ const PRODUCTS = [
         stock: 30,
         img: "https://picsum.photos/200/300?grayscale",
         category: "dulces",
+        discount: "10",
     },
     {
         id: 5,
@@ -88,6 +90,7 @@ const PRODUCTS = [
         stock: 15,
         img: "https://picsum.photos/id/230/200/300",
         category: "combos",
+        discount: "25",
     },
     {
         id: 11,
