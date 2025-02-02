@@ -21,7 +21,7 @@ function ItemCounter (props) {
                   <Button handleClick={suma} color="white" >➕</Button>
               </div>
               <div>
-                <Button handleClick={() => OnSubmitCount(contador)} color="black">Agregar al Carrito</Button>
+                <Button handleClick={() => OnSubmitCount(contador)}>Agregar al Carrito</Button>
               </div>    
           </>
   )

@@ -7,28 +7,33 @@ import Loader from './Loader'
 
 export default function ItemsListConteiner(props) {
 
+  const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState(null)
   const {categoryIDs} = useParams();
 
   useEffect(() => {
       if(categoryIDs === undefined){
         async function getproducts() {
+          setLoading(true)
           const response = await getData();
           setProducts(response);
+          setLoading(false)
         }
     
         getproducts();
       }else{
         async function getProductsByCategory() {
+          setLoading(true)
           const response = await getDataByCategory(categoryIDs);
           setProducts(response);
+          setLoading(false)
         }
   
         getProductsByCategory();
       }
     }, [categoryIDs])
 
-    if(!products)
+    if(loading)
       return <Loader/>
 
   return (

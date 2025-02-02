@@ -12,7 +12,7 @@ export function CartContextProvider(props) {
         return total
     }
 
-    function addItem({ id, price, title, img, count }) {
+    function addItem({ id, price, title, img, count, discount, description }) {
         const copyCartItems = [...ItemsCart];
     
         const foundItem = copyCartItems.find(producto => producto.id === id);
@@ -20,7 +20,7 @@ export function CartContextProvider(props) {
         if (foundItem) {
             foundItem.count += count;
         } else {
-            copyCartItems.push({ id, price, title, img, count });
+            copyCartItems.push({ id, price, title, img, count, discount, description });
         }
     
         setItemsCart(copyCartItems);

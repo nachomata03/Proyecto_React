@@ -5,13 +5,13 @@ export default function ItemList(props) {
         <Item 
           key = {id} 
           id = {id}
-          titulo = {title} 
-          texto = {description} 
-          precio = {price} 
+          title = {title} 
+          description = {description} 
+          price = {price} 
           stock ={stock} 
           img = {img} 
-          categoria = {category}
-          descuento = {discount}
+          category = {category}
+          discount = {discount}
           />
       ))}     
   </>)

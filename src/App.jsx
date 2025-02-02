@@ -6,6 +6,8 @@ import ItemDetailConteiner from './components/ItemDetailConteiner'
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import { CartContextProvider } from './context/cartContext'
+import CartConteiner from './components/CartConteiner'
+import Cartwidget from './components/CartWidget'
 
 function App(){
     return (
@@ -26,6 +28,7 @@ function App(){
                                         <ItemsListConteiner>¡Bienvenido a Santas Golosinas!</ItemsListConteiner>
                                         </section>}>
             </Route>
+            <Route path='/cart' element={<CartConteiner/>}></Route>  
           </Routes>
       </BrowserRouter>
     </CartContextProvider>
