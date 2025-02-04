@@ -17,7 +17,7 @@ function ItemCounter (props) {
   return (<>
             <div className='flex justify-center my-3 border-2'>
                   <Button handleClick={resta} color="white">➖</Button>
-                  <span className='px-3 text-2xl'>{contador}</span>
+                  <span className='px-3 text-2xl border-solid border-black border-2 rounded-lg'>{contador}</span>
                   <Button handleClick={suma} color="white" >➕</Button>
               </div>
               <div>

@@ -6,6 +6,8 @@ const cartContext = createContext(`carrito`);
 export function CartContextProvider(props) {
     const [ItemsCart, setItemsCart] = useState([]);
 
+    let productAdded = false;
+
     function totalItemsCart(){
         let total = 0;
         ItemsCart.forEach((prod)=> {total += prod.count})
