@@ -5,7 +5,7 @@ const PRODUCTS = [
         description: "Delicioso alfajor relleno de dulce de leche y cubierto con chocolate semiamargo.",
         price: 150,
         stock: 50,
-        img: "../../public/img/jorgito.png",
+        img: "/public/img/jorgito.png",
         category: "alfajores",
     },
     {

@@ -29,10 +29,7 @@ export function CartContextProvider(props) {
     }
 
     function removeItem(id){
-        const copyCartItems = [...ItemsCart];
-        const indexOfItem = copyCartItems.findIndex(prod => {prod.id === id})
-        copyCartItems.splice(indexOfItem, 1)
-        setItemsCart(copyCartItems)        
+        setItemsCart(ItemsCart.filter(item => item.id !== id));        
     }
 
     function clear()

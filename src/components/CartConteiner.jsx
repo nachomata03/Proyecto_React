@@ -6,9 +6,17 @@ import Button from './Button';
 export default function CartConteiner() {
     const {ItemsCart, removeItem, clear} = useContext(cartContext);
 
-    const Carrito = ItemsCart.map((item)=> <Item key={item.id} {...item}/>);
-
     const cartLenght = ItemsCart.length;
+
+    const Carrito = ItemsCart.map((item)=> {
+                                      return <>
+                                        <Item key={item.id} {...item}/>
+                                        {cartLenght != 0 && <Button handleClick={() => removeItem(item.id)}>Eliminar</Button>}
+                                      </> ;
+                                          });
+
+    
+
 
   return (
     <>
@@ -25,7 +33,7 @@ export default function CartConteiner() {
             
             <div className='flex gap-5 border-black border-solid border-4 rounded-2xl mx-3 my-5'>
                 {Carrito}
-                {cartLenght != 0 && <Button handleClick={() => removeItem(Carrito.id)}>Eliminar</Button>}
+                
             </div>
         </div>
     </div>    

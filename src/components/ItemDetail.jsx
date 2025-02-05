@@ -8,13 +8,12 @@
 
   export default function ItemDetail({id, title, description, img, price, stock, discount}) { 
     const [itemAddedToCart, setItemAddedToCart] = useState(false);
-    const { addItem, productAdded}= useContext(cartContext);
+    const { addItem }= useContext(cartContext);
 
     function HandleAddToCart(count){
       console.log(`Agregaste ${count} al carrito`)
       addItem({id, price, title, img, count, discount, description }) 
-      setItemAddedToCart(true);  /**FIJARSE EN LOG SI HAY UN PROBLEMA CON SETIEM */
-      console.log(`----- ${productAdded}`)
+      setItemAddedToCart(true);
     }
 
     return (
