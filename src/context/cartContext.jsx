@@ -14,16 +14,15 @@ export function CartContextProvider(props) {
         return total
     }
 
-    function addItem({ id, price, title, img, count, discount, description }) {
+    function addItem({ id, price, title, img, count, discount, description, stock }) {
         const copyCartItems = [...ItemsCart];
         const foundItem = copyCartItems.find(producto => producto.id === id);
     
         if (foundItem) {
             foundItem.count += count;
         } else {
-            copyCartItems.push({ id, price, title, img, count, discount, description });
+            copyCartItems.push({ id, price, title, img, count, discount, description, stock });
             productAdded = true
-            console.log(productAdded);
         }
     
         setItemsCart(copyCartItems);

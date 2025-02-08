@@ -1,18 +1,10 @@
 import Button from "./Button"
 import { Link } from "react-router-dom"
-import cartContext from "../context/cartContext"
-import { useContext } from 'react'; 
-
-
-
 export default function Item(props) {
     const {title, description, children, img, id, discount} = props 
 
-    const {productAdded} = useContext(cartContext)
-
   return (
     <div className="card">
-        {productAdded && <Button handleClick={() => removeItem(id)}>Eliminar</Button>}
         <img src={img} alt="alfajor_jorgito" className={discount ? "m-auto w-52 h-48" : "m-auto w-52 h-52"} />
         <h2 className="text-center text-3xl m-3">{title}</h2>
         <p className="text-center text-base m-2">{description}</p>

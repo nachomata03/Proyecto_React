@@ -8,19 +8,19 @@ export default function ItemDetailConteiner() {
 
   const [loading, setLoading] = useState(true)
   const [ItemInfo, SetItemInfo] = useState(null);
-  const {id} = useParams();
+  const {itemId} = useParams();
   
   useEffect(() => {
     async function getItemData() {
       setLoading(true)
-      const response = await getDataById(id);
-      const newResponse = {...response, id}
+      const response = await getDataById(itemId);
+      const newResponse = {...response, id: itemId}
       SetItemInfo(newResponse);
       setLoading(false)
     }
 
     getItemData();
-  }, [id])
+  }, [itemId])
 
   if(loading)
     return <Loader/>

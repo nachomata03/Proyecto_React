@@ -20,7 +20,7 @@ function App(){
                                         <ItemsListConteiner>¡Bienvenido a Santas Golosinas!</ItemsListConteiner>
                                         </section>}>
             </Route>
-            <Route path='/item/:id' element={<section>
+            <Route path='/item/:itemId' element={<section>
                                               <ItemDetailConteiner/>
                                             </section>}>
             </Route>

@@ -3,6 +3,7 @@ import cartContext from '../context/cartContext'
 import Item from './Item';
 import Button from './Button';
 import { CreateBuyOrder } from '../data/database';
+import ItemDetail from './ItemDetail';
 
 export default function CartConteiner() {
     const {ItemsCart, removeItem, clear, totalCart} = useContext(cartContext);
@@ -24,11 +25,10 @@ export default function CartConteiner() {
       await CreateBuyOrder(orderData)
     }
 
-    const Carrito = ItemsCart.map((item)=> {
-                                      return <div key={item.id}>
-                                        <Item {...item} id={item.id}/>
-                                        {/* {cartLenght != 0 && <Button handleClick={() => removeItem(item.id)}>Eliminar</Button>} */}
-                                      </div> ;
+    const Carrito = ItemsCart.map((item)=> { return (<div key={item.id}>
+                                                        <ItemDetail {...item} id={item.id}/>
+                                                        {/* <Item {...item} id={item.id}/> */}
+                                                    </div>) 
                                           });
 
     
