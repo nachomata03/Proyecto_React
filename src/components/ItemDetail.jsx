@@ -4,7 +4,6 @@
   import { useState } from 'react';
   import Button from './Button';
   import { NavLink } from 'react-router-dom';
-  import '../app.css'
 
   export default function ItemDetail({id, title, description, img, price, stock, discount}) { 
     const [itemAddedToCart, setItemAddedToCart] = useState(false);
