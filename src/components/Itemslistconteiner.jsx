@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
-import {getDataByCategory} from '../data/getdata'
-import getData from '../data/getdata' 
+import {getDataByCategory} from '../data/database'
+import getDB from '../data/database' 
 import Loader from './Loader'
 
 export default function ItemsListConteiner(props) {
@@ -15,7 +15,7 @@ export default function ItemsListConteiner(props) {
       if(categoryIDs === undefined){
         async function getproducts() {
           setLoading(true)
-          const response = await getData();
+          const response = await getDB();
           setProducts(response);
           setLoading(false)
         }

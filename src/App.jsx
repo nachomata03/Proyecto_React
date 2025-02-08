@@ -9,12 +9,17 @@ import { CartContextProvider } from './context/cartContext'
 import CartConteiner from './components/CartConteiner'
 import Cartwidget from './components/CartWidget'
 
+
+import { exportProductsToDB } from './data/database'
+
 function App(){
     return (
     <>
     <CartContextProvider>
       <BrowserRouter>
         <header><NavBar/></header>
+
+        <button onClick={exportProductsToDB}>crear DB</button>
         <Routes>
             <Route path='/' element={<section className='bienvenida'>
                                         <ItemsListConteiner>¡Bienvenido a Santas Golosinas!</ItemsListConteiner>
