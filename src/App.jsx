@@ -13,7 +13,7 @@ function App(){
     return (
     <>
     <CartContextProvider>
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <header><NavBar/></header>
         <Routes>
             <Route path='/' element={<section className='bienvenida'>
