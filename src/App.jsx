@@ -8,6 +8,8 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import { CartContextProvider } from './context/cartContext'
 import CartConteiner from './components/CartConteiner'
 
+import FormCheckOut from './components/FormCheckOut'
+
 
 function App(){
     return (
@@ -29,6 +31,7 @@ function App(){
                                         </section>}>
             </Route>
             <Route path='/cart' element={<CartConteiner/>}></Route>  
+            <Route path='/form' element={<FormCheckOut/>}></Route>
           </Routes>
       </BrowserRouter>
     </CartContextProvider>

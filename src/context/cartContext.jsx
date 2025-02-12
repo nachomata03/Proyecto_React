@@ -1,5 +1,5 @@
-import { createContext } from "react"
-import { useState } from "react"
+import { createContext, useState } from "react"
+import { CreateBuyOrder } from '../data/database';
 
 const cartContext = createContext(`carrito`);
 
@@ -7,6 +7,28 @@ export function CartContextProvider(props) {
     const [ItemsCart, setItemsCart] = useState([]);
 
     let productAdded = false;
+
+
+    /* async  */function handleCheckOut(userData){
+        const orderData = {
+        buyer: {
+            nombre: userData.nombre, 
+            apellido: userData.apellido,
+            email: userData.email
+        },
+        items: ItemsCart,
+        total: totalCart(),
+        fecha: new Date().toLocaleDateString('es-AR', { 
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true})
+        }
+        console.log(orderData)
+        /* await CreateBuyOrder(orderData) */
+    }
 
     function totalItemsCart(){
         let total = 0;
@@ -46,7 +68,7 @@ export function CartContextProvider(props) {
     }
 
     return (
-        <cartContext.Provider value={{ItemsCart, setItemsCart, totalItemsCart, clear, addItem, removeItem, totalCart, productAdded}}>
+        <cartContext.Provider value={{ItemsCart, setItemsCart, totalItemsCart, clear, addItem, removeItem, totalCart, productAdded, handleCheckOut}}>
             {props.children}
         </cartContext.Provider>
     )

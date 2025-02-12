@@ -15,7 +15,7 @@ export default function ItemsListConteiner(props) {
       if(categoryIDs === undefined){
         async function getproducts() {
           setLoading(true)
-          const response = await getDB();
+          const response = await getDB(); 
           setProducts(response);
           setLoading(false)
         }

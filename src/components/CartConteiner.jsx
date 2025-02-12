@@ -1,38 +1,18 @@
 import { useContext } from 'react'
 import cartContext from '../context/cartContext'
-import Item from './Item';
 import Button from './Button';
-import { CreateBuyOrder } from '../data/database';
 import ItemDetail from './ItemDetail';
+import { Link } from 'react-router-dom';
 
 export default function CartConteiner() {
     const {ItemsCart, removeItem, clear, totalCart} = useContext(cartContext);
 
     const cartLenght = ItemsCart.length;
 
-    async function handleCheckOut(){
-      const orderData = {
-        buyer: {
-          nombre, 
-          apellido,
-          email
-        },
-        items: ItemsCart,
-        total: totalCart(),
-        fecha: new date()
-      }
-
-      await CreateBuyOrder(orderData)
-    }
-
     const Carrito = ItemsCart.map((item)=> { return (<div key={item.id}>
                                                         <ItemDetail {...item} id={item.id}/>
-                                                        {/* <Item {...item} id={item.id}/> */}
                                                     </div>) 
                                           });
-
-    
-
 
   return (
     <>
@@ -49,10 +29,18 @@ export default function CartConteiner() {
             
             <div className='flex gap-5 border-black border-solid border-4 rounded-2xl mx-3 my-5'>
                 {Carrito}
-                
             </div>
+            {
+              cartLenght > 0 && 
+              <div className='flex justify-center w-full'>
+                <Link to={"/form"}>
+                  <Button>Comprar</Button>
+                </Link>
+              </div>
+            }
         </div>
     </div>    
     </>
   )
 }
+

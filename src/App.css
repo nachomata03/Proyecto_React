@@ -43,3 +43,9 @@ transition: all 0.7s;
 a.active{
   color: rgb(255, 255, 255);
 }
+
+.DivForm{
+  display: flex;
+  margin-bottom: 8px;
+  background-color: brown;
+}
