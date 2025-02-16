@@ -14,7 +14,11 @@ export function CartContextProvider(props) {
         buyer: {
             nombre: userData.nombre, 
             apellido: userData.apellido,
-            email: userData.email
+            email: userData.email,
+            telefono: userData.telefono,
+            direccion: userData.direccion,
+            ciudad: userData.ciudad,
+            provincia: userData.provincia,
         },
         items: ItemsCart,
         total: totalCart(),

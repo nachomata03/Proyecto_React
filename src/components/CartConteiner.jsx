@@ -3,6 +3,7 @@ import cartContext from '../context/cartContext'
 import Button from './Button';
 import ItemDetail from './ItemDetail';
 import { Link } from 'react-router-dom';
+import "../App.css"
 
 export default function CartConteiner() {
     const {ItemsCart, removeItem, clear, totalCart} = useContext(cartContext);
@@ -19,7 +20,7 @@ export default function CartConteiner() {
       <h1 className='text-center text-5xl mt-5'>Carrito</h1>
       
       <div className='w-fit h-80'>
-        <div>
+        <div>                                        
             {
               cartLenght === 0 ? 
               <p className='text-center text-3xl m-10'>El carrito esta vacio</p> 
@@ -27,7 +28,7 @@ export default function CartConteiner() {
               <Button handleClick={() => clear()}>Eliminar Carrito</Button>
             }
             
-            <div className='flex gap-5 border-black border-solid border-4 rounded-2xl mx-3 my-5'>
+            <div className='divCart '>
                 {Carrito}
             </div>
             {

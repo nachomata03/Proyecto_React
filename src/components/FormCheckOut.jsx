@@ -2,6 +2,7 @@ import Button from "./Button"
 import "../App.css"
 import { useState, useContext } from 'react';
 import cartContext from '../context/cartContext'
+import DivForm from "./DivForm";
 export default function FormCheckOut() {
 
   const {handleCheckOut} = useContext(cartContext);
@@ -9,7 +10,15 @@ export default function FormCheckOut() {
   const [userData, setUserData] = useState({
     nombre: "", 
     apellido: "", 
-    email: ""})
+    email: "",
+    telefono:"",
+    direccion: "",
+    ciudad: "",
+    provincia: ""
+  });
+
+  const array = Object.keys(userData);
+  
     
   function handleSubmit(evt){
     evt.preventDefault()
@@ -25,38 +34,28 @@ export default function FormCheckOut() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col w-1/3">
-      <div className="DivForm">
-        <label htmlFor="name">Nombre:</label>
-        <input 
-          value = {userData.nombre} 
-          onChange={onInputChange} 
-          type="text" 
-          placeholder="Ingrese su nombre" 
-          name="nombre"/>
-    </div>
-    <div className="DivForm">
-        <label htmlFor="apellido">Apellido:</label>
-        <input 
-          value = {userData.apellido} 
-          onChange={onInputChange} 
-          type="text" 
-          placeholder="Ingrese su apellido" 
-          name="apellido"/>
-    </div>
-    <div className="DivForm">
-        <label htmlFor="email">Email:</label>
-        <input 
-          value = {userData.email} 
-          onChange={onInputChange}
-          type="text" 
-          placeholder="Ingrese su email" 
-          name="email"/>
-    </div>
-      <Button 
-        disabled={!(userData.nombre !=="" && userData.apellido !=="" && userData.email !=="")}>
-          Finalizar compra
-      </Button>
+    <form onSubmit={handleSubmit} >
+      <div className="DivConteiner">
+        <h2>Ingresa tus datos</h2>
+        {array.map(item => (
+            <DivForm 
+              key={item}
+              type="text"
+              onChange={onInputChange}
+              userData={userData[item]}
+              field={item}
+            >
+              {item}
+            </DivForm>
+          ))}
+          
+          <span className="flex justify-center">
+            <Button
+              disabled={!(userData.nombre !=="" && userData.apellido !=="" && userData.email !=="" && userData.telefono !=="" && userData.direccion !=="" && userData.ciudad !=="" && userData.provincia !=="")}>
+                Finalizar compra
+            </Button>
+          </span>
+      </div>
     </form>
   )
 }

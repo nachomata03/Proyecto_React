@@ -4,7 +4,9 @@
   import { useState } from 'react';
   import Button from './Button';
   import { NavLink, useLocation } from 'react-router-dom';
-import { count } from 'firebase/firestore';
+  import { count } from 'firebase/firestore';
+  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+  import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';  
 
   export default function ItemDetail({id, title, description, img, price, stock, discount, count}) { 
     const [itemAddedToCart, setItemAddedToCart] = useState(false);  
@@ -18,46 +20,43 @@ import { count } from 'firebase/firestore';
     }
 
     return (
-      <>
-        <div className='mt-12'>
-          { location.pathname === `/cart` && <Button handleClick={() => removeItem(id)}>Eliminar</Button>}
-          <h2 className='text-5xl mb-2 text-center'>{title}</h2>
+      <div className="item-detail-container">
+        <div className={location.pathname === `/cart` ? `divDetailCart` : 'divDetail'}>
+            {location.pathname === `/cart` && <span className='btnEliminarCart'>
+                <Button handleClick={() => removeItem(id)}>
+                    <FontAwesomeIcon
+                        icon={faCircleXmark}
+                        style={{ "--fa-primary-color": "#ffffff" }}
+                        size="2xl"
+                    />
+                </Button>
+            </span>}
 
-          <div className='flex justify-around mt-8 p-3 w-100 text-black text-center'>
-            
-            <div className='w-50 inline'>
-              <img src={img} alt={title} className='w-90 h-80 mx-auto my-2'/>
-            </div>
-            
-            <div className='inline'>
-              <p className='text-2xl m-5 '>{description}</p>  
-              <h3 className='text-xl m-5'>Precio: ${price}</h3>
-              {
-                location.pathname === `/cart` 
-                ? 
-                <span>Unidades seleccionadas: {count}</span>
-                : <div>
-                  <span className='text-xl m-5 block'>Stock: {stock}</span>
-                  {
-                    itemAddedToCart 
-                    ? 
-                    <NavLink to="/cart" className="m-2 bg-gray-300 rounded-lg "><Button>Ver carrito</Button></NavLink> 
-                    : 
-                    <ItemCounter max = {stock} OnSubmitCount={HandleAddToCart}/>
-                  }
+            <h2 className='text-3xl my-4 text-center'>{title}</h2>
+
+            <div className='flex justify-center items-center mt-8 p-3 w-full text-black'> {/* Centrado vertical y horizontal */}
+
+                <div className='image-container'> {/* Contenedor para la imagen */}
+                    <img src={img} alt={title} className='item-image' />
                 </div>
-              }
-            </div>
-            
-          </div>
 
-          <div>
-            
-          </div>
-        </div>
-        
-      </>
+                <div className='description-container'> {/* Contenedor para la descripción */}
+                    <p className='text-xl m-5'>{description}</p>
+                    <h3 className='text-lg m-5'>Precio: ${price}</h3>
+                    {location.pathname === `/cart` ?
+                        <span>Cantidad: {count}</span> :
+                        <div>
+                            <span className='text-lg m-5 block'>Stock: {stock}</span>
+                            {itemAddedToCart ?
+                                <NavLink to="/cart" className="m-2 bg-gray-300 rounded-lg "><Button>Ver carrito</Button></NavLink> :
+                                <ItemCounter max={stock} OnSubmitCount={HandleAddToCart} />
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>  
+      </div> 
     )
   }
 
-  /* export {itemAddedToCart} */

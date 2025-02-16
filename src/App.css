@@ -22,30 +22,232 @@
   justify-content: space-around;
 }
 
+.ConteinerItems{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  justify-items: center;
+}
+
 .card{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 250px;
-  border: 2px solid rgb(0, 0, 0);
+  width: 60%;
   border-radius: 10px;
-  padding: 3px;
+  padding: 3px; 
   margin: 5px;
+  background-color: #e0dde2;
+  -webkit-box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
+  box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
 }
 
 .card:hover{
-  -webkit-box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.75);
-transition: all 0.7s;
+  transform: scale(1.01);
+  transition: all 0.2s;
+  transform-style: preserve-3d;
 }
 
 a.active{
   color: rgb(255, 255, 255);
 }
 
-.DivForm{
+.divCart{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+}
+
+.divDetailCart{
+  border: solid 5px black;
+  border-radius: 10px;
+  padding: 3px;
+  margin: 5px;
+  height: 60vh;
+}
+
+
+.divDetail{
   display: flex;
-  margin-bottom: 8px;
-  background-color: brown;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
+
+}
+
+
+.item-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  min-height: 65vh; /* Asegura que el contenedor ocupe al menos el 100% del viewport height */
+}
+
+
+.image-container { 
+  width: 50%; 
+  display: flex;
+  justify-content: center; 
+}
+
+.item-image {
+  width: 85%; 
+  height: 40vh; 
+}
+
+.description-container {
+  width: 50%;
+  padding-left: 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: solid 2px black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btnEliminarCart{
+  display: inline;
+  position: relative;
+  left: 92%;
+  padding: 3px;
+  margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+form{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.DivConteiner{
+  border: solid 2px black;
+  border-radius: 10px;
+  width: 30%;
+  padding: 3px;
+  margin: 5px;
+}
+
+.DivConteiner h2{
+  font-size: xx-large;
+  text-align: center;
+}
+
+.DivForm{
+  margin: 10px 0px 10px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.DivForm label{
+  margin: 0px 20px 0px 10px;
+  font-size: x-large;
+} 
+
+.DivForm input{
+  margin: 0px 10px 0px 10px;
+  padding: 5px;
+  font-size: x-large;
+  border-radius: 10px;
+  border: solid 2px black;
 }

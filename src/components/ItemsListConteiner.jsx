@@ -47,7 +47,9 @@ export default function ItemsListConteiner(props) {
           </div>
         </div>
 
-      <div className='flex flex-row flex-wrap justify-between gap-5 m-5'><ItemList productos={products}/></div>
+      <div className='ConteinerItems'>
+        <ItemList productos={products}/>
+      </div>
     </>
       
   )
