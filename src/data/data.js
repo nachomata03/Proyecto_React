@@ -7,6 +7,7 @@ const PRODUCTS = [
         stock: 50,
         img: "/public/img/jorgito.png",
         category: "alfajores",
+        discount: "0",
     },
     {
         id: 2,
@@ -26,6 +27,7 @@ const PRODUCTS = [
         stock: 20,
         img: "https://picsum.photos/seed/picsum/200/300",
         category: "alfajores",
+        discount: "0",
     },
     {
         id: 4,
@@ -45,6 +47,7 @@ const PRODUCTS = [
         stock: 10,
         img: "https://picsum.photos/200/300/?blur",
         category: "dulces",
+        discount: "0",
     },
     {
         id: 6,
@@ -54,6 +57,7 @@ const PRODUCTS = [
         stock: 60,
         img: "https://picsum.photos/200/300.webp",
         category: "alfajores",
+        discount: "0",
     },
     {
         id: 7,
@@ -63,6 +67,7 @@ const PRODUCTS = [
         stock: 25,
         img: "https://picsum.photos/id/27/200/300",
         category: "dulces",
+        discount: "0",
     },
     {
         id: 8,
@@ -72,6 +77,7 @@ const PRODUCTS = [
         stock: 35,
         img: "https://picsum.photos/id/37/200/300",
         category: "alfajores",
+        discount: "0",
     },
     {
         id: 9,
@@ -81,6 +87,7 @@ const PRODUCTS = [
         stock: 40,
         img: "https://picsum.photos/id/123/200/300",
         category: "dulces",
+        discount: "0",
     },
     {
         id: 10,
@@ -100,6 +107,7 @@ const PRODUCTS = [
         stock: 25,
         img: "https://picsum.photos/id/287/200/300",
         category: "alfajores",
+        discount: "0",
     },
     {
         id: 12,
@@ -109,6 +117,7 @@ const PRODUCTS = [
         stock: 20,
         img: "https://picsum.photos/id/137/200/300",
         category: "alfajores",
+        discount: "0",
     },
     {
         id: 13,
@@ -118,6 +127,7 @@ const PRODUCTS = [
         stock: 30,
         img: "https://picsum.photos/id/367/200/300",
         category: "alfajores",
+        discount: "0",
     },
     {
         id: 14,
@@ -127,6 +137,7 @@ const PRODUCTS = [
         stock: 50,
         img: "https://picsum.photos/id/789/200/300",
         category: "dulces",
+        discount: "0",
     },
     {
         id: 15,
@@ -136,6 +147,7 @@ const PRODUCTS = [
         stock: 25,
         img: "https://picsum.photos/id/111/200/300",
         category: "alfajores",
+        discount: "0",
     }
 ];
 
