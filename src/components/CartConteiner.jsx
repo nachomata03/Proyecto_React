@@ -5,6 +5,7 @@ import ItemDetail from './ItemDetail';
 import { Link } from 'react-router-dom';
 import "../App.css"
 
+
 export default function CartConteiner() {
     const {ItemsCart, removeItem, clear, totalCart} = useContext(cartContext);
 
@@ -16,16 +17,16 @@ export default function CartConteiner() {
                                           });
 
   return (
-    <>
+    <div className='m-2'>
       <h1 className='text-center text-5xl mt-5'>Carrito</h1>
       
-      <div className='w-fit h-80'>
+      <div className='w-full h-80'>
         <div>                                        
             {
               cartLenght === 0 ? 
               <p className='text-center text-3xl m-10'>El carrito esta vacio</p> 
               :
-              <Button handleClick={() => clear()}>Eliminar Carrito</Button>
+              <Button style="bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-2 text-white font-bold py-2 px-4 rounded" handleClick={() => clear()}>Eliminar Carrito</Button>
             }
             
             <div className='divCart '>
@@ -33,15 +34,15 @@ export default function CartConteiner() {
             </div>
             {
               cartLenght > 0 && 
-              <div className='flex justify-center w-full'>
+              <div className='flex justify-center w-full py-3'>
                 <Link to={"/form"}>
-                  <Button>Comprar</Button>
+                  <Button style="bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2  text-white font-bold py-2 px-4 rounded">Comprar</Button>
                 </Link>
               </div>
             }
         </div>
-    </div>    
-    </>
+      </div>    
+    </div>
   )
 }
 

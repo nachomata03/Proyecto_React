@@ -16,12 +16,12 @@ function ItemCounter (props) {
 
   return (<>
             <div className='flex justify-center my-3 border-2'>
-                  <Button handleClick={resta} color="white">➖</Button>
+                  <Button handleClick={resta}>➖</Button>
                   <span className='px-3 text-2xl border-solid border-black border-2 rounded-lg'>{contador}</span>
-                  <Button handleClick={suma} color="white" >➕</Button>
+                  <Button handleClick={suma}>➕</Button>
               </div>
-              <div>
-                <Button handleClick={() => OnSubmitCount(contador)}>Agregar al Carrito</Button>
+              <div className='my-2'>
+                <Button handleClick={() => OnSubmitCount(contador)} style = "bg-fuchsia-300 hover:bg-fuchsia-500 focus:outline-none focus:ring-2 text-black font-bold py-2 px-4 rounded">Agregar al Carrito</Button>
               </div>    
           </>
   )

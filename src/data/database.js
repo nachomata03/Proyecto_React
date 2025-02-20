@@ -57,6 +57,11 @@ export async function exportProductsToDB() {
 }
 
 export async function CreateBuyOrder(orderData) {
-    const newOrderDoc = await addDoc(collection(db, "Compras"), orderData);
-    return newOrderDoc.id
+    try {
+        const newOrderRef = await addDoc(collection(db, "Compras"), orderData);
+        return { id: newOrderRef.id }; // Retorna un objeto con la propiedad 'id'
+    } catch (error) {
+        console.error("Error creating buy order:", error);
+        throw error; 
+    }
 }

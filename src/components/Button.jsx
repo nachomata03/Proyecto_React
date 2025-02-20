@@ -1,6 +1,6 @@
 export default function Button(props) {
-  const {handleClick, children, color} = props
+  const {handleClick, children, style, disabled} = props
   return (
-    <button onClick={handleClick} style={{backgroundColor: color}}>{children}</button>
+    <button disabled={disabled} onClick={handleClick} className={style} >{children}</button>
   )
 }

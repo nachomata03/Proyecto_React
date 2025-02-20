@@ -5,11 +5,12 @@ const cartContext = createContext(`carrito`);
 
 export function CartContextProvider(props) {
     const [ItemsCart, setItemsCart] = useState([]);
+    const [orderId, setOrderId] = useState("");
 
     let productAdded = false;
 
 
-    /* async  */function handleCheckOut(userData){
+    async function handleCheckOut(userData){
         const orderData = {
         buyer: {
             nombre: userData.nombre, 
@@ -31,7 +32,15 @@ export function CartContextProvider(props) {
             hour12: true})
         }
         console.log(orderData)
-        /* await CreateBuyOrder(orderData) */
+        const IdFromOrder = await CreateBuyOrder(orderData)
+
+        if (IdFromOrder && IdFromOrder.id) { 
+            setOrderId(IdFromOrder.id); 
+        } else {
+            console.error("No se recibió un ID de orden válido:", IdFromOrder);
+            console.log("Hubo un error al procesar tu compra. Por favor, intenta nuevamente.")
+        }
+
     }
 
     function totalItemsCart(){
@@ -72,7 +81,7 @@ export function CartContextProvider(props) {
     }
 
     return (
-        <cartContext.Provider value={{ItemsCart, setItemsCart, totalItemsCart, clear, addItem, removeItem, totalCart, productAdded, handleCheckOut}}>
+        <cartContext.Provider value={{ItemsCart, setItemsCart, totalItemsCart, clear, addItem, removeItem, totalCart, productAdded, handleCheckOut, orderId}}>
             {props.children}
         </cartContext.Provider>
     )

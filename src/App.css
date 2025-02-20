@@ -46,7 +46,6 @@
 .card:hover{
   transform: scale(1.01);
   transition: all 0.2s;
-  transform-style: preserve-3d;
 }
 
 a.active{
@@ -56,16 +55,38 @@ a.active{
 .divCart{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
 }
 
 .divDetailCart{
   border: solid 5px black;
   border-radius: 10px;
   padding: 3px;
-  margin: 5px;
-  height: 60vh;
+  margin: 5px;  
+}
+
+.divDetailCartFlex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 90%;
+}
+
+.item-imageCart {
+  height: 25vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.descriptionCart{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 10px;
+  width: 100%;
 }
 
 
@@ -74,9 +95,21 @@ a.active{
   flex-direction: column;
   align-items: center;
   width: 40%;
-  border: 2px solid rgb(0, 0, 0);
+  background-color: #e0dde2;
+  -webkit-box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
+  box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
   border-radius: 10px;
+  margin-top: 30px;
+} 
 
+.divDetailFlex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  width: full;
+  color: black;
 }
 
 
@@ -84,19 +117,12 @@ a.active{
   display: flex;
   justify-content: center;
   align-items: center; 
-  min-height: 65vh; /* Asegura que el contenedor ocupe al menos el 100% del viewport height */
-}
-
-
-.image-container { 
-  width: 50%; 
-  display: flex;
-  justify-content: center; 
 }
 
 .item-image {
-  width: 85%; 
-  height: 40vh; 
+  width: 95%; 
+  height: 50vh; 
+  object-fit: contain;
 }
 
 .description-container {
@@ -105,111 +131,15 @@ a.active{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: solid 2px black;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .btnEliminarCart{
   display: inline;
   position: relative;
-  left: 92%;
+  left: 90%;
   padding: 3px;
   margin: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 form{
@@ -220,18 +150,23 @@ form{
   justify-content: center;
 }
 
-.DivConteiner{
+.DivConteinerForm{
   border: solid 2px black;
   border-radius: 10px;
-  width: 30%;
+  width: 40%;
   padding: 3px;
-  margin: 5px;
+  margin-top: 20px;
+  background-color: #e0dde2;
+  -webkit-box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
+  box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
 }
 
-.DivConteiner h2{
+.DivConteinerForm h2{
   font-size: xx-large;
   text-align: center;
 }
+
 
 .DivForm{
   margin: 10px 0px 10px 0px;
@@ -242,6 +177,7 @@ form{
 .DivForm label{
   margin: 0px 20px 0px 10px;
   font-size: x-large;
+  text-transform: capitalize;
 } 
 
 .DivForm input{
@@ -250,4 +186,47 @@ form{
   font-size: x-large;
   border-radius: 10px;
   border: solid 2px black;
+}
+
+.ConteinerOrderIDFlex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height:calc(100vh - 80px);  
+  width: 100%;
+}
+
+.ConteinerOrderID{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+  background-color: #87f18d;
+  -webkit-box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
+  box-shadow: 4px 7px 17px 3px rgba(0,0,0,0.75);
+  border-radius: 10px;
+  width: 40%;
+  height: 40vh;
+}
+
+.ConteinerOrderID h2{
+  font-size: xx-large;
+  text-align: center;
+  margin: 10px 0px 10px 0px;
+}
+
+.ConteinerOrderID h3{
+  font-size: x-large;
+  text-align: center;
+  margin: 10px 0px 10px 0px;
+}
+
+.ConteinerOrderID p{
+  font-size: x-large;
+  text-align: center;
+  margin: 10px 0px 10px 0px;
 }

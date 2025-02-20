@@ -10,7 +10,7 @@ export default function Item(props) {
         <p className="text-center text-base m-2">{description}</p>
         {discount && <span className="text-sm text-green-600 block">Descuento: {discount}%</span>}
         <Link to={"/item/" + id} className="m-2 bg-gray-300 rounded-lg p-0.5 duration-200  hover:scale-105">
-          <Button>Ver detalle</Button>
+          <Button style = "bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 text-white font-bold py-2 px-4 rounded">Ver detalle</Button>
         </Link>
     </div>  
   )
